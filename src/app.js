@@ -30,13 +30,12 @@ app.get('/help',(req,res) => {
 app.get('/weather',(req,res) => {
     if (!req.query.address) {
         res.send({
-            errror: 'You have to pass a search parameter'
+            error: 'You have to pass a search parameter'
         })
     }
     else{
 
         geocode(req.query.address,(error,data) => {
-            // console.log(error)
             if (error) {
                 res.send({
                     error: error                
